@@ -40,7 +40,7 @@ function fearNotLetter(str) {
         .forEach(letter => {
             if (letter.charCodeAt(0) === currCharCode) {
                 currCharCode++;
-            } elst {
+            } else {
                 missing = String.fromCharCode(currCharCode);
             }
         });
@@ -64,7 +64,7 @@ function fearNotLetter(str) {
  */
 
 //Solution 3
-fuction fearNotLetter(str) {
+function fearNotLetter(str) {
     for (let i = 1; i < str.length; ++i) {
         if (str.charCodeAt(i) - str.charCodeAt(i - 1) > 1) {
             return String.fromCharCode(str.charCodeAt(i - 1) + 1);
