@@ -129,7 +129,7 @@ const Util = (function() {
 
         function getCase(str) {
             if (str === str.toUpperCase()) {
-                return "uppercase" \;
+                return "uppercase" ;
             }
             if (str === str.toLowerCase()) {
                 return "lowercase";
