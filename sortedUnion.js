@@ -75,7 +75,7 @@ const uniteUnique = (...arr) => [...new Set(arr.flat())];
 
 //Solution 4
 function uniteUnique() {
-    retrun [...arguments]
+    return [...arguments]
         .flat()
         .filter((item, ind, arr) => arr.indexOf(item) === ind);
 }
