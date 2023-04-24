@@ -17,3 +17,65 @@
  * 
  * Hint 3: You will have to check if the current value is already on the array to be returned for every value.
  */
+
+//Solution 1
+function uniteUnique(arr1, arr2, arr3) {
+    //Creates an empty array to store our final result.
+    const finalArray = [];
+
+    // Loop through the arguments object to truly make the program work with two or more arrays
+    // instead of 3
+    for (let i = 0; i < arguments.length; i++) {
+        const arrayArguments = arguments[i];
+
+        // Loops through the array at hand
+        for (let j = 0; j < arrayArguments.length; j++) {
+            let indexValue = arrayArguments[j];
+
+            //Checks if the value is already on the final array.
+            if (finalArray.indexOf(indexValue) < 0) {
+                finalArray.push(indexValue);
+            }
+        }
+    }
+}
+/**
+ * Create empty array finalResult to store the final result.
+ * Loop through the arguments object in the outer loop and store it in arrayArguments.
+ * The inner loop is used to loop through individual array elements.
+ * If the element doesn't already exist in finalArray, add it.
+ * Return finalArray.
+ */
+
+//Solution 2
+function uniteUnique(arr) {
+    const args = [...arguments];
+    const result = [];
+    for (let i = 0; i < args.length; i++) {
+        for (let j = 0; j < args[i].length; j++) {
+            if (!result.includes(args[i][j])) {
+                result.push(args[i][j]);
+            }
+        }
+    }
+    return result;
+}
+
+
+
+//Solution 3
+function uniteUnique(...arr) {
+    return [...new Set(arr.flat())];
+}
+
+// Or as an arrow function
+const uniteUnique = (...arr) => [...new Set(arr.flat())];
+
+
+
+//Solution 4
+function uniteUnique() {
+    retrun [...arguments]
+        .flat()
+        .filter((item, ind, arr) => arr.indexOf(item) === ind);
+}
