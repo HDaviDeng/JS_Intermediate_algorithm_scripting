@@ -73,7 +73,7 @@ function sumFibs(num) {
     // Every third Fibbonaci number is even and the rest are odd
     let f0 = 0;
     let f1 = 1;
-    let f2 = 2;
+    let f2 = 1;
 
     //Generate triples until num is reached
     let sum = 0;
